@@ -16,18 +16,7 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
-                $("#clear").click(function (event) {
-                    $('#content').text('This is a simple single page application');
-                    activateMenu('clear');
-                });
-                $("#department").click(function (event) {
-                    $('#content').load('department.html');
-                    activateMenu('department');
-                });
-                $("#employee").click(function (event) {
-                    $('#content').load('employee.html');
-                    activateMenu('employee');
-                });
+                initButtons()
             });
         </script>
     </head>

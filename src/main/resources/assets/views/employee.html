@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <script>
-    $(document).ready(function () {
-        $('#employeeTable').DataTable({
-            "ajax": "../../employee",
-            "sAjaxDataProp": "",
-            "columns": [
-                {"data": "id"},
-                {"data": "firstName"},
-                {"data": "lastName"},
-                {"data": "salary"},
-                {"data": "birthday"},
-                {"data": "active"},
-                {"data": "department.title"}
-            ],
-            "columnDefs": [
-                {
-                    "render": function (data, type, row) {
-                        return data + '$';
-                    },
-                    "targets": 3
-                },
-                {
-                    "render": function (data, type, row) {
-                        var isChecked = data ? 'checked' : '';
-                        return '<input type="checkbox" ' + isChecked + ' disabled>';
-                    },
-                    "targets": 5
-                }
-            ]
-        });
-    });
+    $(document).ready(initEmployeeTable());
 </script>
 
 <h4 class="text-muted">

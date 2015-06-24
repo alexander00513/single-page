@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <script>
-    $(document).ready(function () {
-        $('#departmentTable').DataTable({
-            "ajax": "../../department",
-            "sAjaxDataProp": "",
-            "columns": [
-                {"data": "id"},
-                {"data": "title"}
-            ]
-        });
-    });
+    $(document).ready(initDepartmentTable());
 </script>
 
 <h4 class="text-muted">
