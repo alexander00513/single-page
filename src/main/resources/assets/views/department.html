@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script>
+    $(document).ready(function () {
+        $('#departmentTable').DataTable({
+            "ajax": "../../department",
+            "sAjaxDataProp": "",
+            "columns": [
+                {"data": "id"},
+                {"data": "title"}
+            ]
+        });
+    });
+</script>
+
+<h4 class="text-muted">
+    Department Page
+</h4><br>
+
+<table id="departmentTable" class="display" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+    </tr>
+    </thead>
+</table>

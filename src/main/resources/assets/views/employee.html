@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<script>
+    $(document).ready(function () {
+        $('#employeeTable').DataTable({
+            "ajax": "../../employee",
+            "sAjaxDataProp": "",
+            "columns": [
+                {"data": "id"},
+                {"data": "firstName"},
+                {"data": "lastName"},
+                {"data": "salary"},
+                {"data": "birthday"},
+                {"data": "active"},
+                {"data": "department.title"}
+            ],
+            "columnDefs": [
+                {
+                    "render": function (data, type, row) {
+                        return data + '$';
+                    },
+                    "targets": 3
+                },
+                {
+                    "render": function (data, type, row) {
+                        var isChecked = data ? 'checked' : '';
+                        return '<input type="checkbox" ' + isChecked + ' disabled>';
+                    },
+                    "targets": 5
+                }
+            ]
+        });
+    });
+</script>
+
+<h4 class="text-muted">
+    Employee Page
+</h4><br>
+
+<table id="employeeTable" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Birthday</th>
+            <th>Is active</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+</table>

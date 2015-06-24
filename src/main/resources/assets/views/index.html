@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Single Page App</title>
+
+        <link href="../../app/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+        <script type="text/javascript" src="../../app/data-tables-1.10.7/js/jquery.js"></script>
+        <script type="text/javascript" src="../../app/data-tables-1.10.7/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="../../app/data-tables-1.10.7/bootstrap/dataTables.bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../app/data-tables-1.10.7/bootstrap/dataTables.bootstrap.css">
+
+        <script type="text/javascript" src="../../app/js/utils.js"></script>
+        <link href="../../app/css/custom.css" rel="stylesheet" media="screen">
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#clear").click(function (event) {
+                    $('#content').text('This is a simple single page application');
+                    activateMenu('clear');
+                });
+                $("#department").click(function (event) {
+                    $('#content').load('department.html');
+                    activateMenu('department');
+                });
+                $("#employee").click(function (event) {
+                    $('#content').load('employee.html');
+                    activateMenu('employee');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation" class="active" id="clear"><a href="#clear">Clear</a></li>
+                        <li role="presentation" id="department"><a href="#department">Department</a></li>
+                        <li role="presentation" id="employee"><a href="#employee">Employee</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">Single Page App</h3>
+            </div>
+
+            <div class="row marketing" id="content">This is a simple single page application</div>
+
+            <footer class="footer">
+                <p>&copy; My Company 2015</p>
+            </footer>
+            <script src="../../app/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        </div>
+    </body>
+</html>
